@@ -50,22 +50,18 @@ static NSString *dataDirectory = nil;
 
 + (BOOL)moveToTrash:(NSString *)path
 {
-	FSRef source;
-	OSErr error;
-	
-	error = FSPathMakeRef((UInt8 *)[path fileSystemRepresentation], &source, NULL);
-	if (error != noErr) {
-		if (error == fnfErr) {
-			logDebug(@"File not found: \"%@\"", path);
-		}
-		else {
-			logDebug(@"Unknown error: %d", error);
-		}
+	NSFileManager *manager = [NSFileManager defaultManager];
+	if (![manager fileExistsAtPath:path]) {
+		logDebug(@"File not found: \"%@\"", path);
 		return NO;
 	}
 	
-	error = FSMoveObjectToTrashSync(&source, NULL, 0);
-	return error == noErr;
+	NSError *error = nil;
+	if (![manager trashItemAtURL:[NSURL fileURLWithPath:path] resultingItemURL:nil error:&error]) {
+		logDebug(@"Failed to move \"%@\" to Trash: %@", path, error);
+		return NO;
+	}
+	return YES;
 }
 
 @end

@@ -28,7 +28,9 @@ import SwiftUI
         tabVC.addTabViewItem(makeTab(label: "Editor", symbolName: "square.and.pencil", rootView: EditorTab()))
         tabVC.addTabViewItem(makeTab(label: "Remote", symbolName: "globe", rootView: RemoteTab()))
         tabVC.addTabViewItem(makeTab(label: "Hotkeys", symbolName: "command.square.fill", rootView: HotkeysTab()))
-        tabVC.addTabViewItem(makeTab(label: "Update", symbolName: "arrow.triangle.2.circlepath", rootView: UpdateTab()))
+        if ApplicationController.updatesEnabled() {
+            tabVC.addTabViewItem(makeTab(label: "Update", symbolName: "arrow.triangle.2.circlepath", rootView: UpdateTab()))
+        }
 
         let w = NSWindow(contentViewController: tabVC)
         w.styleMask = [.titled, .closable]

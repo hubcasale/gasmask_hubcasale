@@ -89,10 +89,10 @@
 			</array>
 		</dict>
 	</array>
+	<key>GMUpdatesEnabled</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
-	<string>YES</string>
-	<key>SUFeedURL</key>
-	<string>http://gmask.clockwise.ee/check_update/</string>
+	<false/>
 	<key>SUPublicDSAKeyFile</key>
 	<string>sparkle_dsa_pub.pem</string>
 	<key>SUPublicEDKey</key>

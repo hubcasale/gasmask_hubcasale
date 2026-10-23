@@ -95,7 +95,7 @@
 		}
 		
 		if ([hosts active]) {
-			[item setState:NSOnState];
+			[item setState:NSControlStateValueOn];
 		}
 		
 		[self addItem:item];

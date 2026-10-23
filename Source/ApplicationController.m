@@ -27,6 +27,7 @@
 #import "RemoteHostsController.h"
 #import "NotificationHelper.h"
 #import <Sparkle/Sparkle.h>
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
 @interface ApplicationController ()
 {
@@ -64,7 +65,7 @@ static ApplicationController *sharedInstance = nil;
 		shouldQuit = YES;
 
 		BOOL isTesting = NSClassFromString(@"XCTestCase") != nil;
-		if (!isTesting) {
+		if (!isTesting && [ApplicationController updatesEnabled]) {
 			_updaterController = [[SPUStandardUpdaterController alloc]
 								  initWithStartingUpdater:YES
 								  updaterDelegate:nil
@@ -80,6 +81,11 @@ static ApplicationController *sharedInstance = nil;
 		return self;
 	}
     return sharedInstance;
+}
+
++ (BOOL)updatesEnabled
+{
+	return [[[NSBundle mainBundle] objectForInfoDictionaryKey:@"GMUpdatesEnabled"] boolValue];
 }
 
 - (SPUUpdater *)updater
@@ -145,10 +151,11 @@ static ApplicationController *sharedInstance = nil;
 {
 	NSOpenPanel *panel = [NSOpenPanel openPanel];
 	
-    NSArray *fileTypes = [NSArray arrayWithObject:HostsFileExtension];
-    [panel setAllowedFileTypes:fileTypes];
-    int result = [panel runModal];
-    if (result == NSOKButton) {
+    UTType *hostsType = [UTType typeWithFilenameExtension:HostsFileExtension];
+    if (hostsType) {
+        panel.allowedContentTypes = @[hostsType];
+    }
+    if ([panel runModal] == NSModalResponseOK) {
 		[self createHostsFileFromLocalURL:[[panel URLs] lastObject]];
 	}
 }
@@ -171,8 +178,12 @@ static ApplicationController *sharedInstance = nil;
 {
 	(void)[GlobalShortcuts shared]; // Register global hotkeys
 
-	checkForUpdatesMenuItem.target = _updaterController;
-	checkForUpdatesMenuItem.action = @selector(checkForUpdates:);
+	if (_updaterController) {
+		checkForUpdatesMenuItem.target = _updaterController;
+		checkForUpdatesMenuItem.action = @selector(checkForUpdates:);
+	} else {
+		checkForUpdatesMenuItem.hidden = YES;
+	}
 
 	[NSApp setServicesProvider:self];
 

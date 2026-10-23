@@ -46,7 +46,8 @@ final class PreferencesPresenterTests: XCTestCase {
         RunLoop.main.run(until: Date(timeIntervalSinceNow: 0.3))
 
         let tabVC = preferencesWindow()?.contentViewController as? NSTabViewController
-        XCTAssertEqual(tabVC?.tabViewItems.count, 5, "Should have 5 preference tabs")
+        let expected = ApplicationController.updatesEnabled() ? 5 : 4
+        XCTAssertEqual(tabVC?.tabViewItems.count, expected, "Should have \(expected) preference tabs")
     }
 
     func testShowPreferences_tabLabelsMatch() {
@@ -55,7 +56,9 @@ final class PreferencesPresenterTests: XCTestCase {
 
         let tabVC = preferencesWindow()?.contentViewController as? NSTabViewController
         let labels = tabVC?.tabViewItems.map(\.label)
-        XCTAssertEqual(labels, ["General", "Editor", "Remote", "Hotkeys", "Update"])
+        var expected = ["General", "Editor", "Remote", "Hotkeys"]
+        if ApplicationController.updatesEnabled() { expected.append("Update") }
+        XCTAssertEqual(labels, expected)
     }
 
     func testShowPreferences_tabsHaveIcons() {

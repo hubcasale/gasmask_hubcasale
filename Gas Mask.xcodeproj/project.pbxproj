@@ -92,10 +92,7 @@
 		35DA4DF6123BF4F30043CA87 /* sparkle_dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 35DA4DF5123BF4F30043CA87 /* sparkle_dsa_pub.pem */; };
 		35E32EDC12145CF900B2C631 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E32EDB12145CF900B2C631 /* Logger.m */; };
 		35E33075121490B100B2C631 /* ExtendedNSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E33074121490B100B2C631 /* ExtendedNSThread.m */; };
-		35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E900891147F42900851A25 /* MAAttachedWindow.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		35F414F4152E1B7800B99583 /* VDKQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 35F414F3152E1B7800B99583 /* VDKQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		35FBCA3B1223172300860FDA /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 35FBCA3A1223172300860FDA /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		35FBCA511223181000860FDA /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 35FBCA501223181000860FDA /* libicucore.dylib */; };
 		3CC80FFF3B4950D6CB6B71D1 /* EditorWindowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682E8D22B3228ABF7EBFDC08 /* EditorWindowPresenter.swift */; };
 		4367D8248BF62656D4AC86D1 /* EditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2C7D6281D5A0139260D12A /* EditorToolbar.swift */; };
 		7189711AD9756F2CBD4BCF22 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C64FE428AF00EB0DEEAAEBD /* EditorView.swift */; };
@@ -130,6 +127,7 @@
 		BB000010000000000000BBBB /* SparkleObserverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000F000000000000BBBB /* SparkleObserverTests.swift */; };
 		BB000012000000000000BBBB /* PreferencesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB000011000000000000BBBB /* PreferencesPresenterTests.swift */; };
 		BB1A2B3C4D5E000200000001 /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */; };
+		BB1A2B3C4D5E000200000002 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1A2B3C4D5E000100000002 /* UserNotifications.framework */; };
 		CC000002000000000000CC01 /* GlobalShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC000001000000000000CC01 /* GlobalShortcuts.swift */; };
 		CC2B3C4D5E6F000100000040 /* NodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000010 /* NodeTests.m */; };
 		CC2B3C4D5E6F000100000041 /* HostsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B3C4D5E6F000100000011 /* HostsTests.m */; };
@@ -305,13 +303,8 @@
 		35E32EDB12145CF900B2C631 /* Logger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Logger.m; path = Source/Logger.m; sourceTree = "<group>"; };
 		35E33073121490B100B2C631 /* ExtendedNSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExtendedNSThread.h; path = Source/ExtendedNSThread.h; sourceTree = "<group>"; };
 		35E33074121490B100B2C631 /* ExtendedNSThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExtendedNSThread.m; path = Source/ExtendedNSThread.m; sourceTree = "<group>"; };
-		35E900881147F42900851A25 /* MAAttachedWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAAttachedWindow.h; path = "Source/3rd Party/MAAttachedWindow.h"; sourceTree = "<group>"; };
-		35E900891147F42900851A25 /* MAAttachedWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MAAttachedWindow.m; path = "Source/3rd Party/MAAttachedWindow.m"; sourceTree = "<group>"; };
 		35F414F2152E1B7800B99583 /* VDKQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VDKQueue.h; path = "Source/3rd Party/VDKQueue.h"; sourceTree = "<group>"; };
 		35F414F3152E1B7800B99583 /* VDKQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VDKQueue.m; path = "Source/3rd Party/VDKQueue.m"; sourceTree = "<group>"; };
-		35FBCA391223172300860FDA /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegexKitLite.h; path = "Source/3rd Party/RegexKitLite.h"; sourceTree = "<group>"; };
-		35FBCA3A1223172300860FDA /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegexKitLite.m; path = "Source/3rd Party/RegexKitLite.m"; sourceTree = "<group>"; };
-		35FBCA501223181000860FDA /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		35FC65991114B12600BD18C3 /* launcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = launcher.m; path = Source/launcher.m; sourceTree = "<group>"; };
 		35FC65A71114B29A00BD18C3 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3D979CFF69FCB07AB746051E /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StatusBarView.swift; path = Source/Swift/StatusBarView.swift; sourceTree = "<group>"; };
@@ -346,6 +339,7 @@
 		BB00000F000000000000BBBB /* SparkleObserverTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkleObserverTests.swift; sourceTree = "<group>"; };
 		BB000011000000000000BBBB /* PreferencesPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesPresenterTests.swift; sourceTree = "<group>"; };
 		BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		BB1A2B3C4D5E000100000002 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		CC000001000000000000CC01 /* GlobalShortcuts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GlobalShortcuts.swift; path = Source/Swift/GlobalShortcuts.swift; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000010 /* NodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NodeTests.m; sourceTree = "<group>"; };
 		CC2B3C4D5E6F000100000011 /* HostsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HostsTests.m; sourceTree = "<group>"; };
@@ -382,7 +376,7 @@
 				3545DCE410E3997200EBA66D /* SystemConfiguration.framework in Frameworks */,
 				35C8D5A911144F7000B4242D /* Carbon.framework in Frameworks */,
 				BB1A2B3C4D5E000200000001 /* ServiceManagement.framework in Frameworks */,
-				35FBCA511223181000860FDA /* libicucore.dylib in Frameworks */,
+				BB1A2B3C4D5E000200000002 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +411,7 @@
 				354E7F8010AEFBC500FC4757 /* Security.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 				BB1A2B3C4D5E000100000001 /* ServiceManagement.framework */,
+				BB1A2B3C4D5E000100000002 /* UserNotifications.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -460,7 +455,6 @@
 				CC2B3C4D5E6F000100000030 /* Tests */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				35FC65A71114B29A00BD18C3 /* Cocoa.framework */,
-				35FBCA501223181000860FDA /* libicucore.dylib */,
 			);
 			name = "Gas Mask";
 			sourceTree = "<group>";
@@ -739,10 +733,6 @@
 			children = (
 				35F414F2152E1B7800B99583 /* VDKQueue.h */,
 				35F414F3152E1B7800B99583 /* VDKQueue.m */,
-				35FBCA391223172300860FDA /* RegexKitLite.h */,
-				35FBCA3A1223172300860FDA /* RegexKitLite.m */,
-				35E900881147F42900851A25 /* MAAttachedWindow.h */,
-				35E900891147F42900851A25 /* MAAttachedWindow.m */,
 			);
 			name = "3rd Party";
 			sourceTree = "<group>";
@@ -1044,10 +1034,8 @@
 				BB00000C000000000000BBBB /* PreferencesPresenter.swift in Sources */,
 				FF000002000000000000FF01 /* AboutBoxView.swift in Sources */,
 				FF000004000000000000FF01 /* AboutBoxPresenter.swift in Sources */,
-				35E9008A1147F42900851A25 /* MAAttachedWindow.m in Sources */,
 				35E32EDC12145CF900B2C631 /* Logger.m in Sources */,
 				35E33075121490B100B2C631 /* ExtendedNSThread.m in Sources */,
-				35FBCA3B1223172300860FDA /* RegexKitLite.m in Sources */,
 				355F5C5B12244B67006C2884 /* LocalHostsController.m in Sources */,
 				355F5CA512244F28006C2884 /* RemoteHostsController.m in Sources */,
 				355F5CDF122452BE006C2884 /* AbstractHostsController.m in Sources */,

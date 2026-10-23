@@ -101,7 +101,10 @@
 -(IBAction)showMenu:(id)sender
 {	
 	HostsMenu *menu = [[HostsMenu alloc] initWithExtras];
-	[statusItem popUpStatusItemMenu:menu];
+	// popUpStatusItemMenu: is deprecated; attach the menu temporarily and click the button.
+	statusItem.menu = menu;
+	[statusItem.button performClick:nil];
+	statusItem.menu = nil;
 }
 
 @end

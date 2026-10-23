@@ -35,6 +35,10 @@
 
 + (ApplicationController*)defaultInstance;
 
+/// Whether Sparkle updates are enabled (Info.plist key GMUpdatesEnabled).
+/// Disabled in this fork until it has its own HTTPS appcast and EdDSA key.
++ (BOOL)updatesEnabled;
+
 @property (nonatomic, readonly) SPUUpdater *updater;
 
 - (IBAction)openPreferencesWindow:(id)sender;
